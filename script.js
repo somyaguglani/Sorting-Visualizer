@@ -4,10 +4,11 @@ const changeSize = document.querySelector(`#changeSize`);
 const buttonsArray = document.querySelectorAll(`.algoButton`);
 const sortButton = document.querySelector(`#sortButton`);
 const bodyContainer = document.querySelector(`.bodyContainer`);
-const MAX_INTERVAL_VALUE = 500;
-const MIN_INTERVAL_VALUE = 10;
-const LOOP_VALUE = 100;
-
+let width = bodyContainer.offsetWidth;
+let MAX_INTERVAL_VALUE = 450;
+let MIN_INTERVAL_VALUE = 10;
+let LOOP_VALUE = 50;
+let widthOfEachBar = width / LOOP_VALUE - (width / LOOP_VALUE) * 10;
 let stateArray = [];
 
 //-------------FUNCTION FOR RESETTING ARRAY----------
@@ -31,7 +32,7 @@ function randomNumberFromInterval(min, max) {
 function renderingArray() {
   const currentArray = stateArray;
   return currentArray.map((value, index) => {
-    return `<div class="arrayBar" data-key= "${index}" style="height: ${value}px;" ></div>`;
+    return `<div class="arrayBar" data-key= "${index}" style="height: ${value}px ; width : ${widthOfEachBar}px ";></div>`;
   });
 }
 
@@ -40,10 +41,7 @@ function renderingArray() {
 function resetAndRenderArray() {
   resetArray().then(function() {
     const currentArray = renderingArray().join(``);
-    console.log(currentArray);
-    bodyContainer.innerHTML = `<div class = "barsContainer" >
-    ${currentArray}
-    </div>`;
+    bodyContainer.innerHTML = currentArray;
   });
 }
 
@@ -54,4 +52,4 @@ resetAndRenderArray();
 generateNewArray.addEventListener(`click`, resetAndRenderArray);
 //set a generic value for range
 //things cut after complessing
-//toobar changes height
+//toolbar changes height
