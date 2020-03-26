@@ -5,6 +5,7 @@ const buttonsArray = document.querySelectorAll(`.algoButton`);
 const sortButton = document.querySelector(`#sortButton`);
 const bodyContainer = document.querySelector(`.bodyContainer`);
 const MAX_INTERVAL_VALUE = 1000;
+
 const MIN_INTERVAL_VALUE = 5;
 
 let stateArray = [];
@@ -12,7 +13,6 @@ let stateArray = [];
 //-------------FUNCTION FOR RESETTING ARRAY----------
 
 async function resetArray() {
-  console.log(`works.....`);
   const currentArray = [];
   for (let i = 0; i < 100; i++) {
     currentArray.push(
@@ -20,7 +20,6 @@ async function resetArray() {
     );
   }
   stateArray = [...currentArray];
-  console.log(stateArray);
 }
 
 function randomNumberFromInterval(min, max) {
@@ -32,19 +31,26 @@ function randomNumberFromInterval(min, max) {
 function renderingArray() {
   const currentArray = stateArray;
   return currentArray.map((value, index) => {
-    return `<div class="arrayBar" data-key= "${index}"> ${value}</div>`;
+    return `<div class="arrayBar" data-key= "${index}" style="height: ${value}px;" ></div>`;
   });
 }
 
-//----------------FUNCTION FOR DISPLAYING ARRAY---------------
+//----------------FUNCTION FOR DISPLAYING ARRAY ---------------
+
 function resetAndRenderArray() {
   resetArray().then(function() {
     const currentArray = renderingArray().join(``);
-    bodyContainer.innerHTML = currentArray;
+    console.log(currentArray);
+    bodyContainer.innerHTML = `<div class = "barsContainer" >
+    ${currentArray}
+    </div>`;
   });
 }
 
 resetAndRenderArray();
+
 //------------EVENT LISTENERTS--------------
 
 generateNewArray.addEventListener(`click`, resetAndRenderArray);
+//set a generic value for range
+//things cut after complessing

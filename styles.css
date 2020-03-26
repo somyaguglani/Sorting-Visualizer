@@ -40,6 +40,20 @@ button:hover {
 .bodyContainer {
   text-align: center;
 }
+.barsContainer {
+  margin: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.arrayBar {
+  height: 42px;
+  width: 0.4rem;
+  margin-left: 0.2rem;
+  background-color: rgba(169, 92, 232, 0.8);
+  color: transparent;
+  font-size: 0.4rem;
+}
 input[type="range"] {
   height: 25px;
   -webkit-appearance: none;
