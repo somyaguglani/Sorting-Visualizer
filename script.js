@@ -4,7 +4,8 @@ const changeSize = document.querySelector(`#changeSize`);
 const buttonsArray = document.querySelectorAll(`.algoButton`);
 const sortButton = document.querySelector(`#sortButton`);
 const bodyContainer = document.querySelector(`.bodyContainer`);
-const MAX_INTERVAL_VALUE = 1000;
+const MAX_INTERVAL_VALUE = 500;
+console.log(bodyContainer.clientHeight);
 
 const MIN_INTERVAL_VALUE = 5;
 
