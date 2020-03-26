@@ -9,6 +9,7 @@ body {
 }
 .rootContainer {
   display: grid;
+  justify-content: center;
 }
 .toolbar {
   padding-top: 1rem;
@@ -35,6 +36,9 @@ input {
 }
 button:hover {
   color: #57a1f0;
+}
+.bodyContainer {
+  text-align: center;
 }
 input[type="range"] {
   height: 25px;
