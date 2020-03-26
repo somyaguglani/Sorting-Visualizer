@@ -14,7 +14,6 @@ body {
 }
 .toolbar {
   padding-top: 1rem;
-  max-height: 8rem;
   cursor: pointer;
   display: grid;
   align-items: center;

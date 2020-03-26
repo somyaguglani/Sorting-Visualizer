@@ -54,3 +54,4 @@ resetAndRenderArray();
 generateNewArray.addEventListener(`click`, resetAndRenderArray);
 //set a generic value for range
 //things cut after complessing
+//toobar changes height
