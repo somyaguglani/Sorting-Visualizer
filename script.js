@@ -5,9 +5,8 @@ const buttonsArray = document.querySelectorAll(`.algoButton`);
 const sortButton = document.querySelector(`#sortButton`);
 const bodyContainer = document.querySelector(`.bodyContainer`);
 const MAX_INTERVAL_VALUE = 500;
-console.log(bodyContainer.clientHeight);
-
-const MIN_INTERVAL_VALUE = 5;
+const MIN_INTERVAL_VALUE = 10;
+const LOOP_VALUE = 100;
 
 let stateArray = [];
 
@@ -15,7 +14,7 @@ let stateArray = [];
 
 async function resetArray() {
   const currentArray = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < LOOP_VALUE; i++) {
     currentArray.push(
       randomNumberFromInterval(MIN_INTERVAL_VALUE, MAX_INTERVAL_VALUE)
     );

@@ -14,6 +14,7 @@ body {
 }
 .toolbar {
   padding-top: 1rem;
+  max-height: 8rem;
   cursor: pointer;
   display: grid;
   align-items: center;
@@ -39,7 +40,7 @@ button:hover {
   color: #57a1f0;
 }
 .bodyContainer {
-  /* margin: 2rem 0; */
+  margin: 2rem 0;
   text-align: center;
 }
 .barsContainer {
