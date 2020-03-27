@@ -14,8 +14,10 @@ body {
   min-height: 100vh;
 }
 .toolbar {
+  max-height: 8em;
   cursor: pointer;
   overflow-x: scroll;
+  overflow-y: scroll;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(7, 1fr);
@@ -42,11 +44,13 @@ button:hover {
   color: #57a1f0;
 }
 .bodyContainer {
-  margin: 2rem 0;
   text-align: center;
 }
 button:focus {
   outline: none;
+}
+label {
+  padding-top: 1em;
 }
 .arrayBar {
   display: inline-flex;

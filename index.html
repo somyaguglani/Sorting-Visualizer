@@ -14,7 +14,14 @@
         <button id="generateArray">Generate New Array</button>
         <label for="changeSize">
           Change Array Size & Sorting Speed
-          <input id="changeSize" type="range" min="4" max="100" />
+          <input
+            id="changeSize"
+            type="range"
+            min="4"
+            max="100"
+            value="10"
+            step="1"
+          />
         </label>
         <button class="algoButton" id="bubbleSort">Bubble Sort</button>
         <button class="algoButton" id="mergeSort">Merge Sort</button>
@@ -24,6 +31,7 @@
       </div>
       <div class="bodyContainer"></div>
     </div>
-    <script src="./script.js"></script>
+
+    <script src="./script.js" type="module"></script>
   </body>
 </html>
