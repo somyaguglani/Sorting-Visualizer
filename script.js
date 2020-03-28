@@ -1,4 +1,4 @@
-// import { getMergeSortAnimations } from "./algorithms/mergeSort";
+import mergeSort from "./algorithms/mergeSort.js";
 
 // -----------SELECTING THINGS FROM DOM-------------
 const generateNewArray = document.querySelector(`#generateArray`);
@@ -39,7 +39,7 @@ function randomNumberFromInterval(min, max) {
 function renderingArray() {
   const currentArray = stateArray;
   return currentArray.map((value, index) => {
-    return `<div class="arrayBar" data-key= "${index}" style="height: ${value}px ; width : ${widthOfEachBar}px ";></div>`;
+    return `  <div class="arrayBar" data-key= "${index}" style="height: ${value}px ; width : ${widthOfEachBar}px ";></div>`;
   });
 }
 
@@ -55,12 +55,14 @@ function resetAndRenderArray() {
 resetAndRenderArray();
 
 //--------------FUNCTION FOR SORT BUTTON------------
-const ANIMATION_SPEED_MS = 5;
-const PRIMARY_COLOR = "turquoise";
-const SECONDARY_COLOR = "red";
+
 function handleSort(e) {
-  mergeSort();
+  mergeSort(stateArray);
+  //choose options
 }
+//make listeners for each sort
+
+//------------FUNCTION FOR HANDLING SIZE--------------
 
 function handleSize(e) {
   const value = e.currentTarget.value;
@@ -71,44 +73,8 @@ function handleSize(e) {
   resetAndRenderArray();
 }
 
-//---------------FUNCTION FOR MERGE SORT ANIMATIONS TO WORK--------------
-
-function mergeSort() {
-  const animations = getMergeSortAnimations(stateArray);
-  for (let i = 0; i < animations.length; i++) {
-    const arrayBars = document.querySelectorAll(`.arrayBar`);
-    const isColorChange = i % 3 !== 2;
-    if (isColorChange) {
-      const [first, second] = animations[i];
-      const firstStyle = arrayBars[first].style;
-      const secondStyle = arrayBars[second].style;
-      console.log(firstStyle.secondStyle);
-      const color = i % 3 === 0 ? SECONDARY_COLOR : PRIMARY_COLOR;
-      setTimeout(() => {
-        firstStyle.backgroundColor = color;
-        secondStyle.backgroundColor = color;
-      }, i * ANIMATION_SPEED_MS);
-    } else {
-      setTimeout(() => {
-        const [first, newHeight] = animations[i];
-        const firstStyle = arrayBars[first].style;
-        firstStyle.height = `${newHeight}px`;
-      }, i * ANIMATION_SPEED_MS);
-    }
-  }
-}
-
 //------------EVENT LISTENERTS--------------
 
 generateNewArray.addEventListener(`click`, resetAndRenderArray);
 sortButton.addEventListener(`click`, handleSort);
 changeSize.addEventListener(`input`, handleSize);
-/*
--------
--------
--------
--------
--------
--------
--------
-*/

@@ -1,5 +1,35 @@
-//------------------CODE FOR MERGE SORT MODULE-----------------
-function getMergeSortAnimations(stateArray) {
+const ANIMATION_SPEED_MS = 5;
+const PRIMARY_COLOR = "turquoise";
+const SECONDARY_COLOR = "red";
+
+//---------------FUNCTION FOR MERGE SORT ANIMATIONS TO WORK--------------
+
+export function mergeSort(stateArray) {
+  const animations = getMergeSortAnimations(stateArray);
+  for (let i = 0; i < animations.length; i++) {
+    const arrayBars = document.querySelectorAll(`.arrayBar`);
+    const isColorChange = i % 3 !== 2; //[i,j]
+    if (isColorChange) {
+      const [first, second] = animations[i];
+      const firstStyle = arrayBars[first].style;
+      const secondStyle = arrayBars[second].style;
+      console.log(firstStyle.secondStyle);
+      const color = i % 3 === 0 ? SECONDARY_COLOR : PRIMARY_COLOR;
+      setTimeout(() => {
+        firstStyle.backgroundColor = color;
+        secondStyle.backgroundColor = color;
+      }, i * ANIMATION_SPEED_MS);
+    } else {
+      setTimeout(() => {
+        const [first, newHeight] = animations[i];
+        const firstStyle = arrayBars[first].style;
+        firstStyle.height = `${newHeight}px`;
+      }, i * ANIMATION_SPEED_MS);
+    }
+  }
+}
+
+export function getMergeSortAnimations(stateArray) {
   const animations = [];
   const auxiliaryArray = [...stateArray];
   mergeSortHelper(
@@ -11,7 +41,7 @@ function getMergeSortAnimations(stateArray) {
   );
   return animations;
 }
-function mergeSortHelper(
+export function mergeSortHelper(
   stateArray,
   startIndex,
   endIndex,
@@ -24,7 +54,7 @@ function mergeSortHelper(
   mergeSortHelper(auxiliaryArray, mid + 1, endIndex, stateArray, animations);
   doMerge(stateArray, startIndex, mid, endIndex, auxiliaryArray, animations);
 }
-function doMerge(
+export function doMerge(
   mainArray,
   startIndex,
   mid,
@@ -61,4 +91,4 @@ function doMerge(
   }
 }
 
-//------------------CODE FOR MERGE SORT MODULE OVER-----------------
+export default mergeSort;
