@@ -1,23 +1,27 @@
-// import mergeSort from "./algorithms/mergeSort.js";
+import mergeSort from "./algorithms/mergeSort.js";
 import bubbleSort from "./algorithms/bubbleSort.js";
+import quickSort from "./algorithms/quicksort.js";
 
 // -----------SELECTING THINGS FROM DOM-------------
 
+const toolbar = document.querySelector(`.toolbar`);
+const rootContainer = document.querySelector(`.rootContainer`);
+console.dir(toolbar);
+console.dir(rootContainer);
 const generateNewArray = document.querySelector(`#generateArray`);
 const changeSize = document.querySelector(`#changeSize`);
 const buttonsArray = document.querySelectorAll(`.algoButton`);
 const sortButton = document.querySelector(`#sortButton`);
 const bodyContainer = document.querySelector(`.bodyContainer`);
-let width = bodyContainer.offsetWidth;
-let height = bodyContainer.offsetHeight;
-let MAX_INTERVAL_VALUE = 1.6 * height;
+let height = rootContainer.offsetHeight - toolbar.offsetHeight;
+let width = rootContainer.offsetWidth;
+console.log(width, height);
+let MAX_INTERVAL_VALUE = height;
 let MIN_INTERVAL_VALUE = 10;
 const scaling = {
   changeSize: 73
 };
-let widthOfEachBar = Math.floor(
-  document.body.clientWidth / (scaling.changeSize * 15)
-);
+let widthOfEachBar = Math.floor(width / (15 * scaling.changeSize));
 let stateArray = [];
 
 //-------------FUNCTION FOR RESETTING ARRAY----------
@@ -59,8 +63,9 @@ resetAndRenderArray();
 //--------------FUNCTION FOR SORT BUTTON------------
 
 function handleSort(e) {
-  // mergeSort(stateArray);
-  bubbleSort(stateArray);
+  //mergeSort(stateArray);
+  // bubbleSort(stateArray);
+  quickSort(stateArray);
   //choose options
 }
 //make listeners for each sort
