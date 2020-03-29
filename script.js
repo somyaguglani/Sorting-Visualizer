@@ -2,6 +2,7 @@
 import bubbleSort from "./algorithms/bubbleSort.js";
 
 // -----------SELECTING THINGS FROM DOM-------------
+
 const generateNewArray = document.querySelector(`#generateArray`);
 const changeSize = document.querySelector(`#changeSize`);
 const buttonsArray = document.querySelectorAll(`.algoButton`);

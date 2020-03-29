@@ -1,14 +1,17 @@
 const primary = `red`;
 const secondary = `turquoise`;
-const TIME_INTERVAL_MS = 0.3;
+const TIME_INTERVAL_MS = 2;
+
+//-----------FUNCTION THAT GETS ANIMATIONS AND VISUALIZES THEM-----------
 
 function bubbleSort(stateArray) {
   const animations = bubblesortHelper(stateArray);
   const arrayBars = document.querySelectorAll(`.arrayBar`);
-  //console.log(arrayBars);
+ 
   for (let i = 0; i < animations.length; i++) {
     if (i % 3 == 0) {
-      //red
+
+      //changing bar's color to red
       const [first, second] = animations[i];
       const firstStyle = arrayBars[first].style;
       const secondStyle = arrayBars[second].style;
@@ -17,7 +20,8 @@ function bubbleSort(stateArray) {
         secondStyle.backgroundColor = primary;
       }, i * TIME_INTERVAL_MS);
     } else if (i % 3 === 1) {
-      //change
+        
+      //changing the heights for sorting
       const [first, second, change] = animations[i];
       const firstStyle = arrayBars[first].style;
       const secondStyle = arrayBars[second].style;
@@ -29,7 +33,9 @@ function bubbleSort(stateArray) {
         }, i * TIME_INTERVAL_MS);
       }
     } else if (i % 3 == 2) {
-      //turqoise
+
+            //changing bar's color to turquoise
+
       const [first, second] = animations[i];
       const firstStyle = arrayBars[first].style;
       const secondStyle = arrayBars[second].style;
@@ -40,6 +46,8 @@ function bubbleSort(stateArray) {
     }
   }
 }
+
+//----------FUNCTION THAT PERFORMS BUBBLE SORT-------------
 
 function bubblesortHelper(stateArray) {
   const animations = [];
