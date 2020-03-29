@@ -1,4 +1,5 @@
-import mergeSort from "./algorithms/mergeSort.js";
+// import mergeSort from "./algorithms/mergeSort.js";
+import bubbleSort from "./algorithms/bubbleSort.js";
 
 // -----------SELECTING THINGS FROM DOM-------------
 const generateNewArray = document.querySelector(`#generateArray`);
@@ -11,7 +12,7 @@ let height = bodyContainer.offsetHeight;
 let MAX_INTERVAL_VALUE = 1.6 * height;
 let MIN_INTERVAL_VALUE = 10;
 const scaling = {
-  changeSize: 10
+  changeSize: 73
 };
 let widthOfEachBar = Math.floor(
   document.body.clientWidth / (scaling.changeSize * 15)
@@ -57,7 +58,8 @@ resetAndRenderArray();
 //--------------FUNCTION FOR SORT BUTTON------------
 
 function handleSort(e) {
-  mergeSort(stateArray);
+  // mergeSort(stateArray);
+  bubbleSort(stateArray);
   //choose options
 }
 //make listeners for each sort
@@ -67,9 +69,6 @@ function handleSort(e) {
 function handleSize(e) {
   const value = e.currentTarget.value;
   scaling[changeSize.id] = value;
-  console.log(scaling.changeSize);
-  console.log(widthOfEachBar);
-
   resetAndRenderArray();
 }
 
