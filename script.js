@@ -16,12 +16,16 @@ const bodyContainer = document.querySelector(`.bodyContainer`);
 let height = rootContainer.offsetHeight - toolbar.offsetHeight;
 let width = rootContainer.offsetWidth;
 console.log(width, height);
-let MAX_INTERVAL_VALUE = height;
+let MAX_INTERVAL_VALUE = height - 40;
 let MIN_INTERVAL_VALUE = 10;
 const scaling = {
-  changeSize: 73
+  changeSize: 10
 };
-let widthOfEachBar = Math.floor(width / (15 * scaling.changeSize));
+const scaleWidth = scaleLen => {
+  console.log(scaling);
+  var widthOfEachBar = Math.floor(width / (2 * scaleLen));
+  return widthOfEachBar;
+};
 let stateArray = [];
 
 //-------------FUNCTION FOR RESETTING ARRAY----------
@@ -45,7 +49,9 @@ function randomNumberFromInterval(min, max) {
 function renderingArray() {
   const currentArray = stateArray;
   return currentArray.map((value, index) => {
-    return `  <div class="arrayBar" data-key= "${index}" style="height: ${value}px ; width : ${widthOfEachBar}px ";></div>`;
+    return `  <div class="arrayBar" id="arrayBar_${index}" data-key= "${index}" style="height: ${value}px ; width : ${scaleWidth(
+      scaling.changeSize
+    )}px ";></div>`;
   });
 }
 
@@ -64,8 +70,8 @@ resetAndRenderArray();
 
 function handleSort(e) {
   //mergeSort(stateArray);
-  // bubbleSort(stateArray);
-  quickSort(stateArray);
+  bubbleSort(stateArray);
+  //quickSort(stateArray);
   //choose options
 }
 //make listeners for each sort
@@ -76,6 +82,13 @@ function handleSize(e) {
   const value = e.currentTarget.value;
   scaling[changeSize.id] = value;
   resetAndRenderArray();
+  setTimeout(() => {
+    for (var i = 0; i < scaling.changeSize; i++) {
+      document.getElementById(`arrayBar_${i}`).style.width = scaleWidth(
+        scaling.changeSize
+      );
+    }
+  }, 100);
 }
 
 //------------EVENT LISTENERTS--------------
