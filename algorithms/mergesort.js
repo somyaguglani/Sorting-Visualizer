@@ -4,8 +4,6 @@ const PRIMARY_COLOR = "red";
 
 const SECONDARY_COLOR = "turquoise";
 
-//
-
 function mergeSort(stateArray) {
   console.log(`mergesort is working`);
 

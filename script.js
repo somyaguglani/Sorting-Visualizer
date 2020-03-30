@@ -30,7 +30,7 @@ let stateArray = [];
 
 const stateObject = {
   algorithm: -1,
-  isRunnning: false
+  isRunning: false
 };
 
 //-------------FUNCTION FOR RESETTING ARRAY----------
@@ -63,7 +63,7 @@ function renderingArray() {
 //----------------FUNCTION FOR DISPLAYING ARRAY ---------------
 
 function resetAndRenderArray() {
-  if (stateObject.isRunnning) return;
+  if (stateObject.isRunning) return;
   resetArray().then(function() {
     const currentArray = renderingArray().join(``);
     bodyContainer.innerHTML = currentArray;
@@ -75,7 +75,7 @@ resetAndRenderArray();
 //------------FUNCTION FOR HANDLING SIZE--------------
 
 function handleSize(e) {
-  if (stateObject.isRunnning) return;
+  if (stateObject.isRunning) return;
   const value = e.currentTarget.value;
   scaling[changeSize.id] = value;
   resetAndRenderArray();
@@ -96,10 +96,9 @@ const scaleWidth = scaleLen => {
 //--------------FUNCTION FOR SORT BUTTON------------
 
 function handleSort(e) {
-  if (stateObject.isRunnning) return;
+  if (stateObject.isRunning) return;
 
-  //change color of sort,generstearry,input
-  stateObject.isRunnning = true;
+  stateObject.isRunning = true;
   sortButton.classList.add(`disabled`);
   generateNewArray.classList.add(`disabled`);
   changeSize.classList.add(`disabled`);
@@ -108,28 +107,26 @@ function handleSort(e) {
   const algorithm = stateObject.algorithm;
   switch (algorithm) {
     case 1:
-      bubbleSort(stateArray);
+      bubbleSort(stateArray, stateObject);
       break;
     case 2:
-      mergeSort(stateArray);
+      mergeSort(stateArray, stateObject);
       break;
     case 3:
-      quickSort(stateArray);
+      quickSort(stateArray, stateObject);
       break;
     case 4:
-      heapSort(stateArray);
+      heapSort(stateArray, stateObject);
       break;
     default:
       return;
   }
 }
-//make listeners for each sort
 
 //----------FUNCTION FOR ALGO BUTTONS-----------
 
 function handleAlgoButtons(e) {
-  if (stateObject.isRunnning) return;
-
+  if (stateObject.isRunning) return;
   sortButton.classList.add(`running`);
   const current = e.currentTarget.id;
   stateObject.algorithm = parseInt(current);
