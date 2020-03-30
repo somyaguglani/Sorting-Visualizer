@@ -1,8 +1,10 @@
+import enableElements from "../script.js";
+
 const PRIMARY_COLOR = `red`;
 const SECONDARY_COLOR = `turquoise`;
 const ANIMATION_SPEED_MS = 10;
 
-function quickSort(stateArray, stateObject) {
+function quickSort(stateArray, otherObject) {
   console.log(`quicksort is working`);
   const animations = [];
   quickSortDriver(stateArray, animations);
@@ -48,6 +50,8 @@ function quickSort(stateArray, stateObject) {
       }
     }
   }
+  otherObject.isRunning = false;
+  enableElements(otherObject);
 }
 
 function quickSortDriver(stateArray, animations) {

@@ -1,10 +1,12 @@
+import enableElements from "../script.js";
+
 const PRIMARY_COLOR = `red`;
 const SECONDARY_COLOR = `turquoise`;
 const ANIMATION_SPEED_MS = 2;
 
 //-----------FUNCTION THAT GETS ANIMATIONS AND VISUALIZES THEM-----------
 
-function bubbleSort(stateArray) {
+function bubbleSort(stateArray, otherObject) {
   console.log(`bubblesort is working`);
 
   const animations = bubblesortHelper(stateArray);
@@ -44,6 +46,9 @@ function bubbleSort(stateArray) {
       }, i * ANIMATION_SPEED_MS);
     }
   }
+  console.log(`bubble sort over`);
+  otherObject.isRunning = false;
+  enableElements(otherObject);
 }
 
 //----------FUNCTION THAT PERFORMS BUBBLE SORT-------------

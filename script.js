@@ -97,30 +97,47 @@ const scaleWidth = scaleLen => {
 
 function handleSort(e) {
   if (stateObject.isRunning) return;
-
+  console.log(`handleSort`);
   stateObject.isRunning = true;
+  console.log(stateObject);
   sortButton.classList.add(`disabled`);
   generateNewArray.classList.add(`disabled`);
   changeSize.classList.add(`disabled`);
   label.classList.add(`disabled`);
 
+  let otherObject = {};
   const algorithm = stateObject.algorithm;
   switch (algorithm) {
     case 1:
-      bubbleSort(stateArray, stateObject);
+      bubbleSort(stateArray, otherObject);
       break;
     case 2:
-      mergeSort(stateArray, stateObject);
+      mergeSort(stateArray, otherObject);
       break;
     case 3:
-      quickSort(stateArray, stateObject);
+      quickSort(stateArray, otherObject);
       break;
     case 4:
-      heapSort(stateArray, stateObject);
+      heapSort(stateArray, otherObject);
       break;
     default:
       return;
   }
+}
+
+//----------FUNCTION FOR ENABLING THINGS BACK-----------
+
+function enableElements(otherObject) {
+  setTimeout(() => {
+    console.log(`enable elements......`);
+    const { isRunning } = otherObject;
+    stateObject.isRunning = isRunning;
+    console.log(stateObject);
+    sortButton.classList.remove(`disabled`);
+    generateNewArray.classList.remove(`disabled`);
+    changeSize.classList.remove(`disabled`);
+    label.classList.remove(`disabled`);
+  }, 180 * scaling.changeSize);
 }
 
 //----------FUNCTION FOR ALGO BUTTONS-----------
@@ -147,3 +164,5 @@ changeSize.addEventListener(`input`, handleSize);
 buttonsArray.forEach(button => {
   button.addEventListener(`click`, handleAlgoButtons);
 });
+
+export default enableElements;

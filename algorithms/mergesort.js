@@ -1,10 +1,12 @@
+import enableElements from "../script.js";
+
 const ANIMATION_SPEED_MS = 2;
 
 const PRIMARY_COLOR = "red";
 
 const SECONDARY_COLOR = "turquoise";
 
-function mergeSort(stateArray) {
+function mergeSort(stateArray,otherObject) {
   console.log(`mergesort is working`);
 
   const animations = getMergeSortAnimations(stateArray);
@@ -28,6 +30,8 @@ function mergeSort(stateArray) {
       }, i * ANIMATION_SPEED_MS);
     }
   }
+  otherObject.isRunning = false;
+  enableElements(otherObject);
 }
 function getMergeSortAnimations(stateArray) {
   const animations = [];
