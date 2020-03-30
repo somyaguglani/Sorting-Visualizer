@@ -60,8 +60,6 @@ function bubblesortHelper(stateArray) {
       animations.push([j, j + 1]);
     }
   }
-  console.log(stateArray);
-  console.log(animations);
   return animations;
 }
 

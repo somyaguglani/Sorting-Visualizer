@@ -54,7 +54,7 @@ body {
   align-items: center;
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 0.5rem 0.5rem;
-  background-color: #34495e;
+  background-color: black;
   box-shadow: 0 0 black;
 }
 .toolbar::-webkit-scrollbar {
@@ -73,13 +73,14 @@ input {
   height: fit-content;
 }
 button:hover {
-  color: #57a1f0;
+  color: #999999;
 }
 .bodyContainer {
   text-align: center;
 }
 button:focus {
   outline: none;
+  color: #82b541;
 }
 label {
   padding-top: 1em;
@@ -92,7 +93,13 @@ label {
   color: transparent;
   font-size: 0.4rem;
 }
-
+#generateArray:focus {
+  color: white;
+  outline: none;
+}
+#generateArray:hover {
+  color: #999999;
+}
 input[type="range"] {
   height: 25px;
   -webkit-appearance: none;

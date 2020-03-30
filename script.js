@@ -15,7 +15,6 @@ const sortButton = document.querySelector(`#sortButton`);
 const bodyContainer = document.querySelector(`.bodyContainer`);
 let height = rootContainer.offsetHeight - toolbar.offsetHeight;
 let width = rootContainer.offsetWidth;
-console.log(width, height);
 let MAX_INTERVAL_VALUE = height - 40;
 let MIN_INTERVAL_VALUE = 10;
 const scaling = {
@@ -68,12 +67,7 @@ resetAndRenderArray();
 
 //--------------FUNCTION FOR SORT BUTTON------------
 
-function handleSort(e) {
-  //mergeSort(stateArray);
-  // bubbleSort(stateArray);
-  quickSort(stateArray);
-  //choose options
-}
+function handleSort(e) {}
 //make listeners for each sort
 
 //------------FUNCTION FOR HANDLING SIZE--------------
