@@ -12,6 +12,7 @@ const changeSize = document.querySelector(`#changeSize`);
 const buttonsArray = document.querySelectorAll(`.algoButton`);
 const sortButton = document.querySelector(`#sortButton`);
 const bodyContainer = document.querySelector(`.bodyContainer`);
+const label = changeSize.labels[0];
 
 //----------CUSTOM VARIABLES OR OBJECTS---------------
 
@@ -99,6 +100,11 @@ function handleSort(e) {
 
   //change color of sort,generstearry,input
   stateObject.isRunnning = true;
+  sortButton.classList.add(`disabled`);
+  generateNewArray.classList.add(`disabled`);
+  changeSize.classList.add(`disabled`);
+  label.classList.add(`disabled`);
+
   const algorithm = stateObject.algorithm;
   switch (algorithm) {
     case 1:

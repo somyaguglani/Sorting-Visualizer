@@ -106,6 +106,19 @@ label {
 #sortButton.running {
   visibility: visible;
 }
+
+#generateArray.disabled,
+#sortButton.disabled {
+  color: red;
+  pointer-events: none;
+}
+#changeSize.disabled {
+  pointer-events: none;
+}
+label.disabled {
+  color: red;
+}
+
 input[type="range"] {
   height: 25px;
   -webkit-appearance: none;
