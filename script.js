@@ -1,6 +1,7 @@
 import mergeSort from "./algorithms/mergeSort.js";
 import bubbleSort from "./algorithms/bubbleSort.js";
-import quickSort from "./algorithms/quicksort.js";
+import quickSort from "./algorithms/quickSort.js";
+import heapSort from "./algorithms/heapSort.js";
 
 // -----------SELECTING THINGS FROM DOM-------------
 
@@ -61,6 +62,7 @@ function renderingArray() {
 //----------------FUNCTION FOR DISPLAYING ARRAY ---------------
 
 function resetAndRenderArray() {
+  if (stateObject.isRunnning) return;
   resetArray().then(function() {
     const currentArray = renderingArray().join(``);
     bodyContainer.innerHTML = currentArray;
@@ -72,6 +74,7 @@ resetAndRenderArray();
 //------------FUNCTION FOR HANDLING SIZE--------------
 
 function handleSize(e) {
+  if (stateObject.isRunnning) return;
   const value = e.currentTarget.value;
   scaling[changeSize.id] = value;
   resetAndRenderArray();
@@ -92,7 +95,27 @@ const scaleWidth = scaleLen => {
 //--------------FUNCTION FOR SORT BUTTON------------
 
 function handleSort(e) {
-  console.log(`still working`);
+  if (stateObject.isRunnning) return;
+
+  //change color of sort,generstearry,input
+  stateObject.isRunnning = true;
+  const algorithm = stateObject.algorithm;
+  switch (algorithm) {
+    case 1:
+      bubbleSort(stateArray);
+      break;
+    case 2:
+      mergeSort(stateArray);
+      break;
+    case 3:
+      quickSort(stateArray);
+      break;
+    case 4:
+      heapSort(stateArray);
+      break;
+    default:
+      return;
+  }
 }
 //make listeners for each sort
 

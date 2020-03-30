@@ -5,6 +5,8 @@ const ANIMATION_SPEED_MS = 2;
 //-----------FUNCTION THAT GETS ANIMATIONS AND VISUALIZES THEM-----------
 
 function bubbleSort(stateArray) {
+  console.log(`bubblesort is working`);
+
   const animations = bubblesortHelper(stateArray);
   const arrayBars = document.querySelectorAll(`.arrayBar`);
 

@@ -3,6 +3,7 @@ const SECONDARY_COLOR = `turquoise`;
 const ANIMATION_SPEED_MS = 10;
 
 function quickSort(stateArray) {
+  console.log(`quicksort is working`);
   const animations = [];
   quickSortDriver(stateArray, animations);
 

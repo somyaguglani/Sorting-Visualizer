@@ -7,6 +7,8 @@ const SECONDARY_COLOR = "turquoise";
 //
 
 function mergeSort(stateArray) {
+  console.log(`mergesort is working`);
+
   const animations = getMergeSortAnimations(stateArray);
   const arrayBars = document.getElementsByClassName("arrayBar");
   for (let i = 0; i < animations.length; i++) {
