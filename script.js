@@ -23,7 +23,7 @@ const scaling = {
 };
 const scaleWidth = scaleLen => {
   console.log(scaling);
-  var widthOfEachBar = Math.floor(width / (2 * scaleLen));
+  var widthOfEachBar = Math.floor(width / (3 * scaleLen));
   return widthOfEachBar;
 };
 let stateArray = [];
@@ -70,8 +70,8 @@ resetAndRenderArray();
 
 function handleSort(e) {
   //mergeSort(stateArray);
-  bubbleSort(stateArray);
-  //quickSort(stateArray);
+  // bubbleSort(stateArray);
+  quickSort(stateArray);
   //choose options
 }
 //make listeners for each sort

@@ -4,6 +4,8 @@ const PRIMARY_COLOR = "red";
 
 const SECONDARY_COLOR = "turquoise";
 
+//
+
 function mergeSort(stateArray) {
   const animations = getMergeSortAnimations(stateArray);
   const arrayBars = document.getElementsByClassName("arrayBar");
