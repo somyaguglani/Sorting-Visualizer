@@ -6,13 +6,14 @@ import quickSort from "./algorithms/quicksort.js";
 
 const toolbar = document.querySelector(`.toolbar`);
 const rootContainer = document.querySelector(`.rootContainer`);
-console.dir(toolbar);
-console.dir(rootContainer);
 const generateNewArray = document.querySelector(`#generateArray`);
 const changeSize = document.querySelector(`#changeSize`);
 const buttonsArray = document.querySelectorAll(`.algoButton`);
 const sortButton = document.querySelector(`#sortButton`);
 const bodyContainer = document.querySelector(`.bodyContainer`);
+
+//----------CUSTOM VARIABLES OR OBJECTS---------------
+
 let height = rootContainer.offsetHeight - toolbar.offsetHeight;
 let width = rootContainer.offsetWidth;
 let MAX_INTERVAL_VALUE = height - 40;
@@ -20,12 +21,12 @@ let MIN_INTERVAL_VALUE = 10;
 const scaling = {
   changeSize: 10
 };
-const scaleWidth = scaleLen => {
-  console.log(scaling);
-  var widthOfEachBar = Math.floor(width / (3 * scaleLen));
-  return widthOfEachBar;
-};
 let stateArray = [];
+
+const stateObject = {
+  algorithm: -1,
+  isRunnning: false
+};
 
 //-------------FUNCTION FOR RESETTING ARRAY----------
 
@@ -65,11 +66,6 @@ function resetAndRenderArray() {
 
 resetAndRenderArray();
 
-//--------------FUNCTION FOR SORT BUTTON------------
-
-function handleSort(e) {}
-//make listeners for each sort
-
 //------------FUNCTION FOR HANDLING SIZE--------------
 
 function handleSize(e) {
@@ -77,7 +73,7 @@ function handleSize(e) {
   scaling[changeSize.id] = value;
   resetAndRenderArray();
   setTimeout(() => {
-    for (var i = 0; i < scaling.changeSize; i++) {
+    for (let i = 0; i < scaling.changeSize; i++) {
       document.getElementById(`arrayBar_${i}`).style.width = scaleWidth(
         scaling.changeSize
       );
@@ -85,8 +81,29 @@ function handleSize(e) {
   }, 100);
 }
 
+const scaleWidth = scaleLen => {
+  let widthOfEachBar = Math.floor(width / (3 * scaleLen));
+  return widthOfEachBar;
+};
+
+//--------------FUNCTION FOR SORT BUTTON------------
+
+function handleSort(e) {}
+//make listeners for each sort
+
+//----------FUNCTION FOR ALGO BUTTONS-----------
+
+function handleAlgoButtons(e) {
+  if (stateObject.isRunnning) return;
+  //show sort button
+  const current = e.currentTarget.id;
+}
+
 //------------EVENT LISTENERTS--------------
 
 generateNewArray.addEventListener(`click`, resetAndRenderArray);
 sortButton.addEventListener(`click`, handleSort);
 changeSize.addEventListener(`input`, handleSize);
+buttonsArray.forEach(button => {
+  button.addEventListener(`click`, handleAlgoButtons);
+});
