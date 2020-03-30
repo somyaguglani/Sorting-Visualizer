@@ -103,6 +103,9 @@ label {
 #sortButton {
   visibility: hidden;
 }
+#sortButton.running {
+  visibility: visible;
+}
 input[type="range"] {
   height: 25px;
   -webkit-appearance: none;

@@ -18,6 +18,9 @@ let height = rootContainer.offsetHeight - toolbar.offsetHeight;
 let width = rootContainer.offsetWidth;
 let MAX_INTERVAL_VALUE = height - 40;
 let MIN_INTERVAL_VALUE = 10;
+const SELECTED_COLOR = `#82b541`;
+const UNSELECTED_COLOR = `white`;
+
 const scaling = {
   changeSize: 10
 };
@@ -88,15 +91,26 @@ const scaleWidth = scaleLen => {
 
 //--------------FUNCTION FOR SORT BUTTON------------
 
-function handleSort(e) {}
+function handleSort(e) {
+  console.log(`still working`);
+}
 //make listeners for each sort
 
 //----------FUNCTION FOR ALGO BUTTONS-----------
 
 function handleAlgoButtons(e) {
   if (stateObject.isRunnning) return;
-  //show sort button
+
+  sortButton.classList.add(`running`);
   const current = e.currentTarget.id;
+  stateObject.algorithm = parseInt(current);
+  buttonsArray.forEach(button => {
+    if (parseInt(button.id) === stateObject.algorithm) {
+      button.style.color = SELECTED_COLOR;
+    } else {
+      button.style.color = UNSELECTED_COLOR;
+    }
+  });
 }
 
 //------------EVENT LISTENERTS--------------
