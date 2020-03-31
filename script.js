@@ -21,7 +21,7 @@ const hiddenText = document.querySelector(`.hidden-content`);
 
 let height = rootContainer.offsetHeight - toolbar.offsetHeight;
 let width = rootContainer.offsetWidth;
-let MAX_INTERVAL_VALUE = height - 40;
+let MAX_INTERVAL_VALUE = height - 50;
 let MIN_INTERVAL_VALUE = 10;
 const SELECTED_COLOR = `#9bf02c`;
 const UNSELECTED_COLOR = `white`;

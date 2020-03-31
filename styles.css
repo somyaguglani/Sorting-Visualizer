@@ -66,6 +66,8 @@ body {
 
 .bodyContainer {
   text-align: center;
+  align-self: flex-end;
+  margin-bottom: 2rem;
 }
 
 .arrayBar {
