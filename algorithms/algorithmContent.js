@@ -47,14 +47,14 @@ set first element as pivot
   const heapsortAlgoHeading = "HEAP SORT";
   const heapsortAlgoPara = `heap_size = N;
 
-        build_maxheap(Arr);
-        for(int i = N; i >= 2 ; i-- )
-        {
-            swap|(Arr[ 1 ], Arr[ i ]);
+        build_maxheap with array;
+        for i = N to i >= 0 
+            swap(Arr[ 0 ], Arr[ i ]);
             heap_size = heap_size - 1;
-            max_heapify(Arr, 1, heap_size);
-        }
-    }`;
+            max_heapify(array, 1, heap_size)
+        
+      max_heapify makes sure that the heap remains maxheap
+    `;
 
   switch (algoNumber) {
     case 1:
