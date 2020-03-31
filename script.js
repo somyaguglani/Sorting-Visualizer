@@ -25,7 +25,7 @@ let MAX_INTERVAL_VALUE = height - 50;
 let MIN_INTERVAL_VALUE = 10;
 const SELECTED_COLOR = `#9bf02c`;
 const UNSELECTED_COLOR = `white`;
-const ANIMATION_UPPER_BOUND = 4000;
+const ANIMATION_UPPER_BOUND = 6000;
 let ANIMATION_SPEED_MS = 2;
 
 const scaling = {
@@ -110,7 +110,7 @@ function handleSort(e) {
   changeSize.classList.add(`disabled`);
   label.classList.add(`disabled`);
   ANIMATION_SPEED_MS = Math.floor(
-    ANIMATION_UPPER_BOUND / (4 * scaling.changeSize)
+    ANIMATION_UPPER_BOUND / (5 * scaling.changeSize)
   );
   let otherObject = {};
   const algorithm = stateObject.algorithm;
