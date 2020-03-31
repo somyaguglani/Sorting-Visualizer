@@ -29,7 +29,7 @@ const ANIMATION_UPPER_BOUND = 6000;
 let ANIMATION_SPEED_MS = 2;
 
 const scaling = {
-  changeSize: 10
+  changeSize: 25
 };
 let stateArray = [];
 
