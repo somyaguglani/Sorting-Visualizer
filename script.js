@@ -110,7 +110,7 @@ function handleSort(e) {
   changeSize.classList.add(`disabled`);
   label.classList.add(`disabled`);
   ANIMATION_SPEED_MS = Math.floor(
-    ANIMATION_UPPER_BOUND / (5 * scaling.changeSize)
+    ANIMATION_UPPER_BOUND / (6 * scaling.changeSize)
   );
   let otherObject = {};
   const algorithm = stateObject.algorithm;

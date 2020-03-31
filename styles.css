@@ -122,21 +122,21 @@ label {
 
 .content {
   width: 3rem;
-  height: 15rem;
+  height: 17rem;
   position: fixed;
   margin-top: 15rem;
   background-color: black;
 }
 
 .hidden-content {
-  width: 20rem;
+  width: 28rem;
   /* width: fit-content; */
-  height: 15rem;
+  height: 17rem;
   text-align: left;
   position: fixed;
   margin-top: 15rem;
   background-color: black;
-  margin-left: -17rem;
+  margin-left: -26rem;
   letter-spacing: 1px;
   transform: translateX(-100%);
   transition: transform 0.5s;
