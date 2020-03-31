@@ -1,12 +1,10 @@
 import enableElements from "../script.js";
 
-const ANIMATION_SPEED_MS = 2;
-
 const PRIMARY_COLOR = "red";
 
 const SECONDARY_COLOR = "turquoise";
 
-function mergeSort(stateArray,otherObject) {
+function mergeSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
   console.log(`mergesort is working`);
 
   const animations = getMergeSortAnimations(stateArray);

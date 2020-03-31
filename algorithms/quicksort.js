@@ -2,9 +2,8 @@ import enableElements from "../script.js";
 
 const PRIMARY_COLOR = `red`;
 const SECONDARY_COLOR = `turquoise`;
-const ANIMATION_SPEED_MS = 10;
 
-function quickSort(stateArray, otherObject) {
+function quickSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
   console.log(`quicksort is working`);
   const animations = [];
   quickSortDriver(stateArray, animations);
@@ -85,7 +84,7 @@ function findIndex(stateArray, lo, hi, animations) {
   const temp = stateArray[i + 1];
   stateArray[i + 1] = stateArray[hi];
   stateArray[hi] = temp;
-  // animations.push([i + 1]);
+
   return i + 1;
 }
 

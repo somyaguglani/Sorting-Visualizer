@@ -13,6 +13,8 @@ body {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
+  display: flex;
+  justify-content: flex-end;
   margin-left: auto;
 }
 @media (min-width: 768px) {
@@ -80,7 +82,7 @@ button:hover {
 }
 button:focus {
   outline: none;
-  color: #82b541;
+  color: #9bf02c;
 }
 label {
   padding-top: 1em;
@@ -106,6 +108,50 @@ label {
 #sortButton.running {
   visibility: visible;
 }
+
+/* content css */
+
+.content {
+  width: 3rem;
+  height: 15rem;
+  position: fixed;
+  margin-top: 15rem;
+  background-color: black;
+}
+
+.hidden-content {
+  width: 20rem;
+  /* width: fit-content; */
+  height: 15rem;
+  text-align: left;
+  position: fixed;
+  margin-top: 15rem;
+  background-color: black;
+  margin-left: -17rem;
+  letter-spacing: 1px;
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+
+p,
+h3 {
+  font-family: monospace;
+  font-weight: 400;
+  margin: 0.5em;
+  padding: 0.4em 1em;
+  color: #9bf02c;
+}
+p {
+  font-size: 1.1em;
+}
+h3 {
+  font-size: 1.5em;
+}
+.open {
+  transform: translateX(100%);
+}
+
+/* content css over */
 
 #generateArray.disabled,
 #sortButton.disabled {

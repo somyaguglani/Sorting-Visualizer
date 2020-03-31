@@ -2,6 +2,7 @@ import mergeSort from "./algorithms/mergeSort.js";
 import bubbleSort from "./algorithms/bubbleSort.js";
 import quickSort from "./algorithms/quickSort.js";
 import heapSort from "./algorithms/heapSort.js";
+import getContent from "./algorithms/algorithmContent.js";
 
 // -----------SELECTING THINGS FROM DOM-------------
 
@@ -13,6 +14,8 @@ const buttonsArray = document.querySelectorAll(`.algoButton`);
 const sortButton = document.querySelector(`#sortButton`);
 const bodyContainer = document.querySelector(`.bodyContainer`);
 const label = changeSize.labels[0];
+const openButton = document.querySelector(`.content`);
+const hiddenText = document.querySelector(`.hidden-content`);
 
 //----------CUSTOM VARIABLES OR OBJECTS---------------
 
@@ -20,8 +23,10 @@ let height = rootContainer.offsetHeight - toolbar.offsetHeight;
 let width = rootContainer.offsetWidth;
 let MAX_INTERVAL_VALUE = height - 40;
 let MIN_INTERVAL_VALUE = 10;
-const SELECTED_COLOR = `#82b541`;
+const SELECTED_COLOR = `#9bf02c`;
 const UNSELECTED_COLOR = `white`;
+const ANIMATION_UPPER_BOUND = 4000;
+let ANIMATION_SPEED_MS = 2;
 
 const scaling = {
   changeSize: 10
@@ -104,21 +109,23 @@ function handleSort(e) {
   generateNewArray.classList.add(`disabled`);
   changeSize.classList.add(`disabled`);
   label.classList.add(`disabled`);
-
+  ANIMATION_SPEED_MS = Math.floor(
+    ANIMATION_UPPER_BOUND / (4 * scaling.changeSize)
+  );
   let otherObject = {};
   const algorithm = stateObject.algorithm;
   switch (algorithm) {
     case 1:
-      bubbleSort(stateArray, otherObject);
+      bubbleSort(stateArray, otherObject, ANIMATION_SPEED_MS);
       break;
     case 2:
-      mergeSort(stateArray, otherObject);
+      mergeSort(stateArray, otherObject, ANIMATION_SPEED_MS);
       break;
     case 3:
-      quickSort(stateArray, otherObject);
+      quickSort(stateArray, otherObject, ANIMATION_SPEED_MS);
       break;
     case 4:
-      heapSort(stateArray, otherObject);
+      heapSort(stateArray, otherObject, ANIMATION_SPEED_MS);
       break;
     default:
       return;
@@ -150,6 +157,7 @@ function handleAlgoButtons(e) {
   buttonsArray.forEach(button => {
     if (parseInt(button.id) === stateObject.algorithm) {
       button.style.color = SELECTED_COLOR;
+      hiddenText.innerHTML = getContent(stateObject.algorithm);
     } else {
       button.style.color = UNSELECTED_COLOR;
     }
@@ -163,6 +171,10 @@ sortButton.addEventListener(`click`, handleSort);
 changeSize.addEventListener(`input`, handleSize);
 buttonsArray.forEach(button => {
   button.addEventListener(`click`, handleAlgoButtons);
+});
+openButton.addEventListener(`click`, e => {
+  console.log(`button is working`);
+  hiddenText.classList.toggle(`open`);
 });
 
 export default enableElements;

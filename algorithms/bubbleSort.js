@@ -2,11 +2,10 @@ import enableElements from "../script.js";
 
 const PRIMARY_COLOR = `red`;
 const SECONDARY_COLOR = `turquoise`;
-const ANIMATION_SPEED_MS = 2;
 
 //-----------FUNCTION THAT GETS ANIMATIONS AND VISUALIZES THEM-----------
 
-function bubbleSort(stateArray, otherObject) {
+function bubbleSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
   console.log(`bubblesort is working`);
 
   const animations = bubblesortHelper(stateArray);
