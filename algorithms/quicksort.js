@@ -3,8 +3,12 @@ import enableElements from "../script.js";
 const PRIMARY_COLOR = `red`;
 const SECONDARY_COLOR = `turquoise`;
 
+//-----------FUNCTION THAT GETS ANIMATIONS AND VISUALIZES THEM-----------
+
+
 function quickSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
-  console.log(`quicksort is working`);
+  
+
   const animations = [];
   quickSortDriver(stateArray, animations);
 
@@ -53,6 +57,8 @@ function quickSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
   enableElements(otherObject);
 }
 
+//-------------FUNCTION THAT PERFORMS QUICKSORT-----------
+
 function quickSortDriver(stateArray, animations) {
   quickSortHelper(stateArray, 0, stateArray.length - 1, animations);
 }
@@ -64,6 +70,8 @@ function quickSortHelper(stateArray, lo, hi, animations) {
     quickSortHelper(stateArray, partition + 1, hi, animations);
   }
 }
+
+//--------------FUNCTION THAT GETS PIVOT--------------
 
 function findIndex(stateArray, lo, hi, animations) {
   let i = lo - 1;

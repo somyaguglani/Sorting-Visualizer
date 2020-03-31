@@ -4,13 +4,13 @@ const PRIMARY_COLOR = "red";
 
 const SECONDARY_COLOR = "turquoise";
 
-function heapSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
-  console.log(`heapsort is working`);
+//-----------FUNCTION THAT GETS ANIMATIONS AND VISUALIZES THEM-----------
 
+function heapSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
   const animations = [];
 
   heapSortHelper(stateArray, animations);
-  //work for animations here
+
   const arrayBars = document.querySelectorAll(`.arrayBar`);
 
   for (let i = 0; i < animations.length; i++) {
@@ -48,8 +48,6 @@ function heapSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
           arrayBars[index].style.backgroundColor = PRIMARY_COLOR;
         }, i * ANIMATION_SPEED_MS);
       } else {
-        //time for turquise
-
         if (change === false) {
           setTimeout(() => {
             if (left !== -1) {
@@ -81,11 +79,11 @@ function heapSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
     }
   }
 
-  // console.log(stateArray);
-  // console.log(animations);
   otherObject.isRunning = false;
   enableElements(otherObject);
 }
+
+// -----------FUNCTION THAT ACTUALLY PERFORMS HEAP SORT---------------
 
 function heapSortHelper(stateArray, animations) {
   const n = stateArray.length;
@@ -103,6 +101,8 @@ function heapSortHelper(stateArray, animations) {
     heapify(stateArray, i, 0, animations);
   }
 }
+
+//--------FUNCTION THAT MAKES SURE THAT HEAP REMAINS MAX HEAP---------------
 
 function heapify(stateArray, n, i, animations) {
   let largest = i;

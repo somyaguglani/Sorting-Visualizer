@@ -4,9 +4,9 @@ const PRIMARY_COLOR = "red";
 
 const SECONDARY_COLOR = "turquoise";
 
-function mergeSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
-  console.log(`mergesort is working`);
+//-----------FUNCTION THAT VISUALIZES ANIMATIONS-----------
 
+function mergeSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
   const animations = getMergeSortAnimations(stateArray);
   const arrayBars = document.getElementsByClassName("arrayBar");
   for (let i = 0; i < animations.length; i++) {
@@ -31,6 +31,9 @@ function mergeSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
   otherObject.isRunning = false;
   enableElements(otherObject);
 }
+
+//-------------FUNCTION THAT GETS ANIMATION--------------
+
 function getMergeSortAnimations(stateArray) {
   const animations = [];
   if (stateArray.length <= 1) return stateArray;
@@ -44,6 +47,9 @@ function getMergeSortAnimations(stateArray) {
   );
   return animations;
 }
+
+
+//--------------FUNCTIONS THAT PERFORMS MERGE SORT--------------
 
 function mergeSortHelper(
   stateArray,

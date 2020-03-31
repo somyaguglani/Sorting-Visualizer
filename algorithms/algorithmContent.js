@@ -1,3 +1,5 @@
+//--------FUNCTION FOR DISPLAYING ALGORITHMS FOR DIFFERENT SORTING TECHNIQUES---------
+
 function getContent(algoNumber) {
   const bubblesortAlgoHeading = "BUBBLE SORT";
   const bubblesortAlgoPara = `do
