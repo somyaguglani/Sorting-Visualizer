@@ -162,29 +162,4 @@ function heapify(stateArray, n, i, animations) {
   }
 }
 
-/*
-public class HeapSort 
-{ 
-	void heapify(int arr[], int n, int i) 
-	{ 
-	
-		if (largest != i) 
-		{ 
-			int swap = arr[i]; 
-			arr[i] = arr[largest]; 
-			arr[largest] = swap; 
-          [l,r,i,largest,false,true] length = 6 first false = red
-          [l,r,i,largest,true,true] first true -> change then turquise
-			// Recursively heapify the affected sub-tree 
-			heapify(arr, n, largest); 
-		} else{
-        [l,r,i,i,false,true] first false = red
-        [l,r,i,i,true,false] first true ->don't change then turquise  
-        }
-	} 
-
-
-} 
-*/
-
 export default heapSort;
