@@ -11,7 +11,6 @@ function quickSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
 
   const arrayBars = document.querySelectorAll(`.arrayBar`);
   for (let i = 0; i < animations.length; i++) {
-    //if length is 2 it's not final state
     if (animations[i].length === 2) {
       const [first, second] = animations[i];
       const firstStyle = arrayBars[first].style;
@@ -51,7 +50,6 @@ function quickSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
     }
     if (i === animations.length - 1) {
       setTimeout(() => {
-        console.log(`set timeout works properly`);
         otherObject.isRunning = false;
         enableElements(otherObject);
       }, i * ANIMATION_SPEED_MS + 1000);

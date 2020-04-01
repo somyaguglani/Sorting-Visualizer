@@ -60,7 +60,9 @@ set first element as pivot
             max_heapify(array, 1, heap_size)
              <br>
         
-      max_heapify makes sure that the heap remains maxheap
+      max_heapify makes sure that the heap 
+      </br>
+      remains maxheap
     `;
 
   switch (algoNumber) {

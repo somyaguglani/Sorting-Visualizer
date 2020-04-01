@@ -79,7 +79,6 @@ function heapSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
     }
     if (i === animations.length - 1) {
       setTimeout(() => {
-        console.log(`set timeout works properly`);
         otherObject.isRunning = false;
         enableElements(otherObject);
       }, i * ANIMATION_SPEED_MS + 1000);

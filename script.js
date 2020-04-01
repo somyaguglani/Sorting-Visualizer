@@ -100,7 +100,6 @@ function handleSize(e) {
 
 const scaleWidth = scaleLen => {
   let widthOfEachBar = Math.floor(width / (3 * scaleLen));
-  console.log(scaling.changeSize);
   return widthOfEachBar;
 };
 
@@ -108,9 +107,7 @@ const scaleWidth = scaleLen => {
 
 function handleSort(e) {
   if (stateObject.isRunning) return;
-  console.log(`handleSort`);
   stateObject.isRunning = true;
-  console.log(stateObject);
   sortButton.classList.add(`disabled`);
   generateNewArray.classList.add(`disabled`);
   changeSize.classList.add(`disabled`);
@@ -141,10 +138,8 @@ function handleSort(e) {
 //----------FUNCTION FOR ENABLING THINGS BACK-----------
 
 function enableElements(otherObject) {
-  console.log(`enable elements......`);
   const { isRunning } = otherObject;
   stateObject.isRunning = isRunning;
-  console.log(stateObject);
   sortButton.classList.remove(`disabled`);
   generateNewArray.classList.remove(`disabled`);
   changeSize.classList.remove(`disabled`);
@@ -177,11 +172,9 @@ buttonsArray.forEach(button => {
   button.addEventListener(`click`, handleAlgoButtons);
 });
 const ToggleMenu = () => {
-  console.log(`button is working`);
   hiddenText.classList.toggle(`open`);
 };
 openButton.addEventListener(`click`, () => ToggleMenu());
-document
-  .getElementById("hidden-content")
-  .addEventListener("click", () => ToggleMenu());
+hiddenText.addEventListener("click", () => ToggleMenu());
+
 export default enableElements;
