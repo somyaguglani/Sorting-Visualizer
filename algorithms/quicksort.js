@@ -5,10 +5,7 @@ const SECONDARY_COLOR = `turquoise`;
 
 //-----------FUNCTION THAT GETS ANIMATIONS AND VISUALIZES THEM-----------
 
-
 function quickSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
-  
-
   const animations = [];
   quickSortDriver(stateArray, animations);
 
@@ -52,9 +49,14 @@ function quickSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
         }, i * ANIMATION_SPEED_MS);
       }
     }
+    if (i === animations.length - 1) {
+      setTimeout(() => {
+        console.log(`set timeout works properly`);
+        otherObject.isRunning = false;
+        enableElements(otherObject);
+      }, i * ANIMATION_SPEED_MS + 1000);
+    }
   }
-  otherObject.isRunning = false;
-  enableElements(otherObject);
 }
 
 //-------------FUNCTION THAT PERFORMS QUICKSORT-----------

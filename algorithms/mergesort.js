@@ -27,9 +27,14 @@ function mergeSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
         barOneStyle.height = `${newHeight}px`;
       }, i * ANIMATION_SPEED_MS);
     }
+    if (i === animations.length - 1) {
+      setTimeout(() => {
+        console.log(`set timeout works properly`);
+        otherObject.isRunning = false;
+        enableElements(otherObject);
+      }, i * ANIMATION_SPEED_MS + 1000);
+    }
   }
-  otherObject.isRunning = false;
-  enableElements(otherObject);
 }
 
 //-------------FUNCTION THAT GETS ANIMATION--------------
@@ -47,7 +52,6 @@ function getMergeSortAnimations(stateArray) {
   );
   return animations;
 }
-
 
 //--------------FUNCTIONS THAT PERFORMS MERGE SORT--------------
 

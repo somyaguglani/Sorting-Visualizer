@@ -38,10 +38,14 @@ function bubbleSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
         secondStyle.backgroundColor = SECONDARY_COLOR;
       }, i * ANIMATION_SPEED_MS);
     }
+    if (i === animations.length - 1) {
+      setTimeout(() => {
+        console.log(`set timeout works properly`);
+        otherObject.isRunning = false;
+        enableElements(otherObject);
+      }, i * ANIMATION_SPEED_MS + 1000);
+    }
   }
-  console.log(`bubble sort over`);
-  otherObject.isRunning = false;
-  enableElements(otherObject);
 }
 
 //----------FUNCTION THAT PERFORMS BUBBLE SORT-------------

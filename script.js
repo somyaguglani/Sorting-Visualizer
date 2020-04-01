@@ -135,16 +135,14 @@ function handleSort(e) {
 //----------FUNCTION FOR ENABLING THINGS BACK-----------
 
 function enableElements(otherObject) {
-  setTimeout(() => {
-    console.log(`enable elements......`);
-    const { isRunning } = otherObject;
-    stateObject.isRunning = isRunning;
-    console.log(stateObject);
-    sortButton.classList.remove(`disabled`);
-    generateNewArray.classList.remove(`disabled`);
-    changeSize.classList.remove(`disabled`);
-    label.classList.remove(`disabled`);
-  }, 180 * scaling.changeSize);
+  console.log(`enable elements......`);
+  const { isRunning } = otherObject;
+  stateObject.isRunning = isRunning;
+  console.log(stateObject);
+  sortButton.classList.remove(`disabled`);
+  generateNewArray.classList.remove(`disabled`);
+  changeSize.classList.remove(`disabled`);
+  label.classList.remove(`disabled`);
 }
 
 //----------FUNCTION FOR ALGO BUTTONS-----------
