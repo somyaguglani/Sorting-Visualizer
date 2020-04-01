@@ -29,7 +29,7 @@ const ANIMATION_UPPER_BOUND = 6000;
 let ANIMATION_SPEED_MS = 2;
 
 const scaling = {
-  changeSize: 25
+  changeSize: 15
 };
 let stateArray = [];
 
@@ -81,7 +81,12 @@ resetAndRenderArray();
 
 function handleSize(e) {
   if (stateObject.isRunning) return;
-  const value = e.currentTarget.value;
+  let value = e.currentTarget.value;
+  if (window.innerWidth < 800) {
+    if (value > 15) {
+      value = 15;
+    }
+  }
   scaling[changeSize.id] = value;
   resetAndRenderArray();
   setTimeout(() => {
@@ -95,6 +100,7 @@ function handleSize(e) {
 
 const scaleWidth = scaleLen => {
   let widthOfEachBar = Math.floor(width / (3 * scaleLen));
+  console.log(scaling.changeSize);
   return widthOfEachBar;
 };
 
@@ -170,9 +176,12 @@ changeSize.addEventListener(`input`, handleSize);
 buttonsArray.forEach(button => {
   button.addEventListener(`click`, handleAlgoButtons);
 });
-openButton.addEventListener(`click`, e => {
+const ToggleMenu = () => {
   console.log(`button is working`);
   hiddenText.classList.toggle(`open`);
-});
-
+};
+openButton.addEventListener(`click`, () => ToggleMenu());
+document
+  .getElementById("hidden-content")
+  .addEventListener("click", () => ToggleMenu());
 export default enableElements;
