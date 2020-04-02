@@ -1,4 +1,4 @@
-import enableElements from "../script.js";
+import enableElements from "../index.js";
 
 const PRIMARY_COLOR = `red`;
 const SECONDARY_COLOR = `turquoise`;

@@ -1,4 +1,4 @@
-import enableElements from "../script.js";
+import enableElements from "../index.js";
 
 const PRIMARY_COLOR = `red`;
 const SECONDARY_COLOR = `turquoise`;
@@ -40,7 +40,6 @@ function bubbleSort(stateArray, otherObject, ANIMATION_SPEED_MS) {
     }
     if (i === animations.length - 1) {
       setTimeout(() => {
-      
         otherObject.isRunning = false;
         enableElements(otherObject);
       }, i * ANIMATION_SPEED_MS + 1000);
