@@ -688,7 +688,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _mergeSort = _interopRequireDefault(require("./algorithms/mergeSort.js"));
+var _mergeSort = _interopRequireDefault(require("./algorithms/mergeSort"));
 
 var _bubbleSort = _interopRequireDefault(require("./algorithms/bubbleSort.js"));
 
@@ -864,7 +864,7 @@ openButton.addEventListener(`click`, () => ToggleMenu());
 hiddenText.addEventListener("click", () => ToggleMenu());
 var _default = enableElements;
 exports.default = _default;
-},{"./algorithms/mergeSort.js":"algorithms/mergeSort.js","./algorithms/bubbleSort.js":"algorithms/bubbleSort.js","./algorithms/quickSort.js":"algorithms/quickSort.js","./algorithms/heapSort.js":"algorithms/heapSort.js","./algorithms/algorithmContent.js":"algorithms/algorithmContent.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./algorithms/mergeSort":"algorithms/mergeSort.js","./algorithms/bubbleSort.js":"algorithms/bubbleSort.js","./algorithms/quickSort.js":"algorithms/quickSort.js","./algorithms/heapSort.js":"algorithms/heapSort.js","./algorithms/algorithmContent.js":"algorithms/algorithmContent.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
