@@ -1,4 +1,4 @@
-import mergeSort from "./algorithms/mergeSort";
+import mergeSort from "./algorithms/mergeSort.js";
 import bubbleSort from "./algorithms/bubbleSort.js";
 import quickSort from "./algorithms/quickSort.js";
 import heapSort from "./algorithms/heapSort.js";
