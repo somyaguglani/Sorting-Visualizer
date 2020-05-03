@@ -1,6 +1,6 @@
 ## SORTING VISUALIZER ##
 Welcome to the Sorting Visualizer ! I have made this application because algorithms in general fascinate me . So why not build something that can actually show someone what actually happens behind the scenes?
-The application does exactly that and you can check it here ....
+You can check it out on this link https://somyaguglani.github.io/Sorting-Visualizer/
 
 ### Meet The Algorithms ###
 
