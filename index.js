@@ -26,7 +26,7 @@ let MIN_INTERVAL_VALUE = 10;
 const SELECTED_COLOR = `#9bf02c`;
 const UNSELECTED_COLOR = `white`;
 const ANIMATION_UPPER_BOUND = 6000;
-let ANIMATION_SPEED_MS = 2;
+let ANIMATION_SPEED_MS = 1.4;
 
 const scaling = {
   changeSize: 15
